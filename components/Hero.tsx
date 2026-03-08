@@ -2,27 +2,27 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-const imageVariants = {
-  hidden: { opacity: 0, x: -50, y: 18 },
-  show: (i: number) => ({
+const imageVariants: Variants = {
+  hidden: { opacity: 0, x: -40, y: 18 },
+  show: (i: number = 0) => ({
     opacity: 1,
     x: 0,
     y: 0,
     transition: {
-      delay: 0.2 + i * 0.14,
-      duration: 0.85,
-      ease: [0.22, 1, 0.36, 1],
+      delay: 0.2 + i * 0.12,
+      duration: 0.8,
+      ease: "easeOut",
     },
   }),
 };
 
 export default function Hero() {
   return (
-    <section className="section relative overflow-hidden py-16 sm:py-20 lg:py-24">
-      {/* BACKGROUND */}
+    <section className="section relative overflow-hidden py-14 sm:py-18 lg:py-24">
+      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/images/canyon.jpg"
@@ -31,40 +31,35 @@ export default function Hero() {
           priority
           className="object-cover object-center"
         />
-        {/* darker image overlay so white text reads well */}
-        <div className="absolute inset-0 bg-slate-950/45" />
-        {/* soft gradient split for cleaner composition */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/88 to-slate-950/10 lg:from-white lg:via-white/72 lg:to-slate-950/20" />
-        {/* premium tint accents */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.18),transparent_24%),radial-gradient(circle_at_top_right,rgba(30,64,175,0.16),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.18),transparent_24%)]" />
+        <div className="absolute inset-0 bg-slate-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-slate-950/15 lg:from-white lg:via-white/72 lg:to-slate-950/28" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.16),transparent_24%),radial-gradient(circle_at_top_right,rgba(30,64,175,0.16),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.18),transparent_24%)]" />
       </div>
 
-      {/* DECOR */}
+      {/* Soft decor */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-10 top-8 h-72 w-72 rounded-full bg-amber-200/25 blur-3xl" />
         <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-blue-300/15 blur-3xl" />
         <div className="absolute bottom-0 right-1/4 h-52 w-52 rounded-full bg-white/10 blur-3xl" />
       </div>
 
-      <div className="relative grid items-center gap-14 lg:grid-cols-[1.02fr_0.98fr]">
-        {/* LEFT CONTENT */}
+      <div className="relative grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
+        {/* Left content */}
         <motion.div
-          initial={{ opacity: 0, y: 26 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10"
+          transition={{ duration: 0.75, ease: "easeOut" }}
+          className="relative z-10 max-w-2xl"
         >
           <div className="mb-5 inline-flex items-center rounded-full border border-amber-300/70 bg-amber-100/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-amber-800 shadow-sm backdrop-blur-md">
             AIRO Adventures &amp; Safaris
           </div>
 
-          {/* hero text stays dark */}
-          <h1 className="max-w-2xl text-4xl font-bold leading-[1.02] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl xl:text-[4.15rem]">
+          <h1 className="max-w-2xl text-4xl font-bold leading-[1.02] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl xl:text-[4rem]">
             Chase the Wild,
             <span className="mt-2 block text-blue-950">Conquer the Sky</span>
           </h1>
 
-          {/* all other text white */}
           <p className="mt-6 max-w-xl text-base leading-8 text-white sm:text-lg">
             Discover premium Kilimanjaro trekking and unforgettable Tanzania
             safari journeys with a calm, elegant experience designed around
@@ -82,7 +77,7 @@ export default function Hero() {
 
             <Link
               href="/safaris"
-              className="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-6 py-3.5 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-amber-300 hover:bg-white/16"
+              className="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-6 py-3.5 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:border-amber-300 hover:bg-white/15"
             >
               Safari Packages
             </Link>
@@ -104,9 +99,8 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* RIGHT VISUAL */}
-        <div className="relative z-10 h-[560px] w-full">
-          {/* big main image */}
+        {/* Right visual desktop */}
+        <div className="relative z-10 hidden h-[560px] w-full lg:block">
           <motion.div
             custom={0}
             variants={imageVariants}
@@ -115,14 +109,8 @@ export default function Hero() {
             className="absolute right-0 top-0 w-[58%]"
           >
             <motion.div
-              animate={{
-                y: [0, -8, 0],
-                transition: {
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-              }}
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
               <div className="overflow-hidden rounded-[2.2rem] border border-white/25 bg-white/10 p-2 shadow-[0_24px_70px_rgba(15,23,42,0.24)] backdrop-blur-md">
                 <div className="relative h-[330px] overflow-hidden rounded-[1.7rem]">
@@ -139,7 +127,6 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* left lower image */}
           <motion.div
             custom={1}
             variants={imageVariants}
@@ -148,14 +135,12 @@ export default function Hero() {
             className="absolute left-0 top-16 w-[40%]"
           >
             <motion.div
-              animate={{
-                y: [0, -6, 0],
-                transition: {
-                  duration: 5.2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.2,
-                },
+              animate={{ y: [0, -6, 0] }}
+              transition={{
+                duration: 5.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.2,
               }}
             >
               <div className="overflow-hidden rounded-[2rem] border border-white/25 bg-white/10 p-2 shadow-[0_20px_55px_rgba(15,23,42,0.22)] backdrop-blur-md">
@@ -172,7 +157,6 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* bottom image */}
           <motion.div
             custom={2}
             variants={imageVariants}
@@ -181,14 +165,12 @@ export default function Hero() {
             className="absolute bottom-0 right-10 w-[46%]"
           >
             <motion.div
-              animate={{
-                y: [0, -7, 0],
-                transition: {
-                  duration: 5.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.4,
-                },
+              animate={{ y: [0, -7, 0] }}
+              transition={{
+                duration: 5.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.4,
               }}
             >
               <div className="overflow-hidden rounded-[2rem] border border-white/25 bg-white/10 p-2 shadow-[0_20px_55px_rgba(15,23,42,0.22)] backdrop-blur-md">
@@ -205,12 +187,11 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* supporting accent card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.94, y: 16 }}
+            initial={{ opacity: 0, scale: 0.96, y: 14 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute bottom-8 left-12 hidden rounded-2xl border border-amber-300/30 bg-slate-950/55 px-5 py-4 text-white shadow-[0_18px_45px_rgba(15,23,42,0.20)] backdrop-blur-md lg:block"
+            transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
+            className="absolute bottom-8 left-12 rounded-2xl border border-amber-300/30 bg-slate-950/55 px-5 py-4 text-white shadow-[0_18px_45px_rgba(15,23,42,0.20)] backdrop-blur-md"
           >
             <p className="text-xs uppercase tracking-[0.22em] text-amber-300">
               Signature Experience
@@ -222,10 +203,30 @@ export default function Hero() {
             </p>
           </motion.div>
 
-          {/* satin gold accents */}
-          <div className="absolute bottom-8 left-8 hidden h-28 w-28 rounded-full bg-amber-300/25 blur-3xl lg:block" />
-          <div className="absolute right-8 top-12 hidden h-20 w-20 rounded-full border border-amber-300/30 bg-amber-200/10 backdrop-blur-md lg:block" />
+          <div className="absolute bottom-8 left-8 h-28 w-28 rounded-full bg-amber-300/25 blur-3xl" />
+          <div className="absolute right-8 top-12 h-20 w-20 rounded-full border border-amber-300/30 bg-amber-200/10 backdrop-blur-md" />
         </div>
+
+        {/* Mobile visual */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: "easeOut", delay: 0.15 }}
+          className="relative z-10 lg:hidden"
+        >
+          <div className="overflow-hidden rounded-[2rem] border border-white/20 bg-white/10 p-2 shadow-[0_20px_55px_rgba(15,23,42,0.20)] backdrop-blur-md">
+            <div className="relative h-[320px] overflow-hidden rounded-[1.5rem]">
+              <Image
+                src="/images/elephant-vertical.jpg"
+                alt="Safari experience"
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent" />
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
