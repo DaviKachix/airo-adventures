@@ -276,7 +276,7 @@ const packages = [
   },
 ];
 
-function getCategoryColor(category) {
+function getCategoryColor(category: string) {
   switch (category) {
     case "safari":
       return "bg-red-50 text-red-700 border-red-200";
