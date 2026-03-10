@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -23,19 +24,29 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl">
       <div className="section">
-        <div className="flex items-center justify-between py-4">
-          <Link href="/" className="group flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-semibold tracking-wide text-white shadow-sm transition group-hover:bg-blue-950">
-              AA
-            </div>
+        <div className="flex items-center justify-between py-3">
+          <Link href="/" className="group flex items-center gap-4">
+            {/* Logo image only, no border/background */}
+          <div className="relative h-20 w-32 shrink-0 sm:h-24 sm:w-36 lg:h-28 lg:w-44">
+  <Image
+    src="/airo_adventures.png"
+    alt="Airo Adventures & Safaris logo"
+    fill
+    priority
+    className="object-contain scale-125"
+  />
+</div>
 
             <div className="leading-tight">
-              <p className="text-sm font-semibold tracking-[0.18em] text-slate-950">
+              <p className="text-sm font-bold tracking-[0.18em] text-slate-950 sm:text-base lg:text-lg">
                 AIRO ADVENTURES
               </p>
-              <p className="text-[11px] uppercase tracking-[0.22em] text-amber-700">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-amber-700 sm:text-[11px] lg:text-xs">
+                &amp; SAFARIS
+              </p>
+              <p className="mt-1 hidden text-[11px] uppercase tracking-[0.2em] text-slate-500 sm:block">
                 Chase the Wild, Conquer the Sky
               </p>
             </div>
@@ -62,7 +73,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="https://wa.me/255620517139"
+              href="https://wa.me/255624947363"
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-amber-500 hover:text-blue-950"

@@ -11,8 +11,13 @@ const mainRoutes = [
   {
     title: "Lemosho Route",
     image: "/images/mountain.jpg",
-    tag: "Scenic Route",
-    text: "A beautiful and well-loved route known for strong scenery, good acclimatization, and a more premium trekking feel.",
+    tag: "Scenic Camping Route",
+    text:
+      "The Lemosho Route is one of the most beautiful ways to climb Mount Kilimanjaro. It is highly loved for its outstanding scenery, quieter start, and strong acclimatization profile. This is a camping route, ideal for trekkers who want a more scenic and gradual journey across rainforest, moorland, and high alpine landscapes before pushing toward the summit.",
+    stay:
+      "Accommodation is in quality mountain tents with a dining tent for meals and rest.",
+    meals:
+      "Each climbing day includes breakfast in the morning, lunch during the day, and dinner in the evening, freshly prepared by the Airo Adventures & Safaris mountain crew.",
     options: [
       { duration: "7 Days", price: "$2500" },
       { duration: "8 Days", price: "$2800" },
@@ -21,25 +26,40 @@ const mainRoutes = [
   {
     title: "Northern Circuit",
     image: "/images/landscape.jpg",
-    tag: "Longest Route",
-    text: "A longer route designed for travelers who want broader views, more time for acclimatization, and a distinct Kilimanjaro experience.",
+    tag: "Longest Camping Route",
+    text:
+      "The Northern Circuit is the longest standard route on Kilimanjaro and is ideal for travelers who want more time on the mountain, broader views, and stronger acclimatization. This camping route gives climbers a distinct and quieter experience with extended exposure to Kilimanjaro’s dramatic beauty.",
+    stay:
+      "Accommodation is in mountain camping tents supported by a full trekking crew.",
+    meals:
+      "Breakfast, lunch, and dinner are served daily to keep climbers energized throughout the journey.",
     options: [{ duration: "8–9 Days", price: "$3200" }],
   },
   {
     title: "Machame Route",
     image: "/images/canyon.jpg",
-    tag: "Popular Choice",
-    text: "A classic route with dramatic scenery and strong popularity among climbers seeking an adventurous summit path.",
+    tag: "Popular Camping Route",
+    text:
+      "The Machame Route is one of the most popular ways to climb Kilimanjaro and is famous for its dramatic scenery and adventurous mountain feel. This is a camping route that passes through beautiful ecological zones and gives climbers a rewarding summit journey with strong visual variety from forest to alpine desert.",
+    stay:
+      "Accommodation is in mountain tents, with a dining tent provided for meal service and comfort on the route.",
+    meals:
+      "Each day includes breakfast, lunch, and dinner prepared by the mountain cook to support your climb from start to summit.",
     options: [
-      { duration: "6 Days", price: "$2000" },
+      { duration: "6 Days", price: "$2065" },
       { duration: "7 Days", price: "$2350" },
     ],
   },
   {
     title: "Marangu Route",
     image: "/images/landscape.jpg",
-    tag: "Classic Route",
-    text: "A well-known route favored for its established path and accessible structure for many travelers.",
+    tag: "Classic Hut Route",
+    text:
+      "The Marangu Route is the easiest and smoothest route on Mount Kilimanjaro, making it a favorite for many first-time climbers. It is widely known as the Coca-Cola Route because of its more established path and comfortable structure. Unlike the camping routes, Marangu offers mountain huts for overnight stays, making the climb feel more accessible and comfortable.",
+    stay:
+      "Accommodation is in mountain huts with sleeping space and dining areas, rather than camping tents.",
+    meals:
+      "Each day includes breakfast in the morning, lunch during the climb, and dinner in the evening, served with the support of the Airo Adventures & Safaris crew.",
     options: [
       { duration: "5 Days", price: "$2000" },
       { duration: "6 Days", price: "$2250" },
@@ -48,8 +68,13 @@ const mainRoutes = [
   {
     title: "Rongai Route",
     image: "/images/mountain.jpg",
-    tag: "Quiet Side",
-    text: "A route known for a different approach to the mountain and a calmer trekking atmosphere.",
+    tag: "Quiet Camping Route",
+    text:
+      "The Rongai Route approaches Kilimanjaro from the northern side near the Kenyan border. It is known for its calmer trekking atmosphere, gradual profile, and distinctive mountain perspective. This is a camping route and a strong choice for travelers who prefer less crowding and a quieter climb.",
+    stay:
+      "Accommodation is in camping tents with full mountain crew support throughout the trek.",
+    meals:
+      "Breakfast, lunch, and dinner are provided every day to keep the team well fueled at altitude.",
     options: [
       { duration: "5 Days", price: "$2150" },
       { duration: "6 Days", price: "$2300" },
@@ -59,8 +84,13 @@ const mainRoutes = [
   {
     title: "Umbwe Route",
     image: "/images/canyon.jpg",
-    tag: "Steeper Adventure",
-    text: "A strong choice for more adventurous trekkers looking for a bold and direct mountain experience.",
+    tag: "Steeper Camping Route",
+    text:
+      "The Umbwe Route is a steeper and more demanding option for adventurous trekkers who want a bold and direct mountain experience. This camping route is known for its tougher approach and is better suited to climbers looking for a more intense challenge on Kilimanjaro.",
+    stay:
+      "Accommodation is in mountain camping tents supported by guides, porters, and the cooking team.",
+    meals:
+      "Daily breakfast, lunch, and dinner are provided as part of the full mountain support experience.",
     options: [
       { duration: "5 Days", price: "$2100" },
       { duration: "6 Days", price: "$2250" },
@@ -71,41 +101,52 @@ const mainRoutes = [
 
 const dayTrips = [
   {
-    title: "Lemosho Day Trip",
+    title: "Lemosho / Shira Day Hike",
     duration: "1 Day",
     price: "$400",
+    text:
+      "A scenic short mountain experience for travelers who want to enjoy Kilimanjaro views and highland beauty without a summit climb.",
   },
   {
     title: "Machame Day Trip",
     duration: "1 Day",
     price: "$350",
+    text:
+      "A rewarding day hike that gives travelers a taste of Kilimanjaro’s forest scenery and mountain atmosphere in a lighter format.",
   },
   {
-    title: "Marangu Day Trip",
+    title: "Marangu Day Hike",
     duration: "1 Day",
     price: "$400",
+    text:
+      "A popular one-day Kilimanjaro experience following the Marangu side, ideal for guests who want to feel the mountain without doing the full climb.",
   },
   {
-    title: "Marangu Day Trip",
+    title: "Marangu Overnight Experience",
     duration: "2 Days",
     price: "$800",
+    text:
+      "A short overnight Kilimanjaro experience for travelers who want a deeper mountain feel with more time on the trail and a stronger sense of the climb.",
   },
 ];
 
 const highlights = [
   {
     title: "Experienced Mountain Crew",
-    text: "Guides, chefs, and porters who support the climb with care, structure, and professionalism.",
+    text:
+      "Our guides, cooks, and porters support every climb with professionalism, care, and practical mountain experience from the first day to the descent.",
     icon: ClockIcon,
   },
   {
-    title: "Clear Route Options",
-    text: "Multiple route choices help travelers select the pace, duration, and style that best fits their goals.",
+    title: "Camping and Hut Options",
+    text:
+      "Travelers can choose between scenic camping routes such as Lemosho, Machame, Rongai, and Northern Circuit, or the hut-based comfort of Marangu Route.",
     icon: ArrowTrendingUpIcon,
   },
   {
-    title: "Summit-Focused Experience",
-    text: "From scenic trails to daily support, every route is shaped around a stronger overall climbing journey.",
+    title: "Daily Meals on the Mountain",
+    text:
+      "Every full climb includes breakfast, lunch, and dinner each day, helping trekkers stay energized, comfortable, and well supported throughout the journey.",
     icon: FireIcon,
   },
 ];
@@ -121,10 +162,10 @@ export default function KilimanjaroPage() {
           Climb Africa’s highest peak through beautifully planned route options
         </h1>
         <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
-          Explore AIRO Adventures &amp; Safaris Kilimanjaro packages with clear
-          route choices, premium presentation, and a calm structure built for
-          modern trekkers looking for beauty, challenge, and confidence on the
-          mountain.
+          Explore <span className="font-semibold text-slate-900">Airo Adventures &amp; Safaris</span>{" "}
+          Kilimanjaro packages with scenic route choices, full mountain support,
+          daily meals, and a calm structure designed for travelers seeking beauty,
+          confidence, and a memorable summit journey.
         </p>
       </div>
 
@@ -155,6 +196,20 @@ export default function KilimanjaroPage() {
               <p className="mt-5 text-sm leading-7 text-slate-600">
                 {route.text}
               </p>
+
+              <div className="mt-4 rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                <p className="text-sm font-semibold text-slate-900">Accommodation</p>
+                <p className="mt-2 text-sm leading-7 text-slate-600">
+                  {route.stay}
+                </p>
+              </div>
+
+              <div className="mt-4 rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                <p className="text-sm font-semibold text-slate-900">Meals on the Route</p>
+                <p className="mt-2 text-sm leading-7 text-slate-600">
+                  {route.meals}
+                </p>
+              </div>
 
               <div className="mt-6 space-y-3">
                 {route.options.map((option) => (
@@ -193,8 +248,9 @@ export default function KilimanjaroPage() {
             Short mountain experiences for lighter adventures
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
-            Day trips provide a lighter way to experience Kilimanjaro’s natural
-            beauty for travelers who want a shorter mountain journey.
+            Our day hikes offer a lighter way to experience Mount Kilimanjaro for
+            travelers who want mountain scenery, fresh air, and a rewarding trail
+            without committing to the full summit trek.
           </p>
         </div>
 
@@ -208,27 +264,37 @@ export default function KilimanjaroPage() {
                 {trip.title}
               </h3>
               <p className="mt-2 text-sm text-slate-500">{trip.duration}</p>
+              <p className="mt-4 text-sm leading-7 text-slate-600">{trip.text}</p>
               <p className="mt-5 text-xl font-semibold text-amber-700">
                 {trip.price}
               </p>
             </div>
           ))}
         </div>
+
+        <div className="mt-8 rounded-[1.5rem] border border-amber-200 bg-amber-50 p-5">
+          <p className="text-sm leading-7 text-slate-700">
+            <span className="font-semibold text-slate-900">Helpful note:</span> For one-day hikes,
+            guide tips are recommended at around <span className="font-semibold text-amber-700">$20</span>.
+            On full climbs, tips are optional but commonly appreciated for good service.
+          </p>
+        </div>
       </section>
 
       <section className="mt-20 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_16px_45px_rgba(15,23,42,0.05)] sm:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-700">
-            Why Climb With AIRO
+            Why Climb With Airo Adventures &amp; Safaris
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-            A mountain experience designed with clarity and support
+            A mountain experience designed with clarity, comfort, and support
           </h2>
           <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
-            Kilimanjaro is more than a trek. It is a journey of pace, support,
-            preparation, and personal achievement. AIRO approaches the climb
-            with a calm structure and a polished travel experience that helps
-            guests focus on the mountain itself.
+            Climbing Kilimanjaro is more than reaching the summit. It is a journey
+            of pace, preparation, altitude, and encouragement.{" "}
+            <span className="font-semibold text-slate-900">Airo Adventures &amp; Safaris</span>{" "}
+            approaches every climb with structured support, quality mountain service,
+            and a travel experience that helps guests stay focused on the mountain itself.
           </p>
 
           <div className="mt-8 grid gap-4">
@@ -253,6 +319,27 @@ export default function KilimanjaroPage() {
                 </div>
               );
             })}
+          </div>
+
+          <div className="mt-8 rounded-[1.5rem] border border-slate-100 bg-slate-50 p-5">
+            <h3 className="text-base font-semibold text-slate-950">
+              Recommended Mountain Crew Tips
+            </h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600">
+              Tipping is optional, but for excellent service many guests choose to
+              give tips directly in cash to the team.
+            </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                <span className="font-semibold text-slate-900">Guide:</span> $20+
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                <span className="font-semibold text-slate-900">Cook:</span> $15+
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                <span className="font-semibold text-slate-900">Porter:</span> $10+
+              </div>
+            </div>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -288,12 +375,12 @@ export default function KilimanjaroPage() {
                 Kilimanjaro Experience
               </p>
               <h3 className="mt-4 text-3xl font-bold tracking-tight text-white">
-                Scenic routes, strong support, and summit ambition
+                Scenic routes, daily support, and a summit journey worth remembering
               </h3>
               <p className="mt-5 text-base leading-8 text-white/80">
-                Choose from short day experiences or full summit routes designed
-                for travelers who want to experience Kilimanjaro with greater
-                clarity and confidence.
+                Whether you choose the comfort of Marangu huts or the beauty of
+                Kilimanjaro’s camping routes, every climb is built around careful
+                support, daily meals, and a stronger connection to the mountain.
               </p>
             </div>
           </div>
